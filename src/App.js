@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserWorkouts from './components/UserWorkouts';
-import Header from './components/Header';
+import UserWorkouts from './components/workout/UserWorkouts';
+import Header from './components/layout/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from './Context';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header branding="Workout App" />
-        <div className="container">
-          <UserWorkouts />
+      <Provider>
+        <div className="App">
+          <Header branding="Workout App" />
+          <div className="container">
+            <UserWorkouts />
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
