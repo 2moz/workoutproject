@@ -1,26 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserWorkouts from './UserWorkouts';
 
 class App extends Component {
-  state = {
-    users: {
-      name: 'Tomas flores',
-      emai: 'tomas@gmail.com',
-      workouts: [
-        {
-          wourkoutName: 'benchpress',
-          reps: '8',
-          sets: '4',
-          restTime: '5',
-          day: '2'
-        }
-      ]
-    }
-  };
-
   render() {
-    const { users } = this.state;
-    return <div className="App">{console.log(users.workouts)}</div>;
+    return (
+      <div className="App">
+        <UserWorkouts />
+      </div>
+    );
   }
 }
 
