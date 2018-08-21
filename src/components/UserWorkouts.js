@@ -24,7 +24,7 @@ class UserWorkouts extends Component {
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 3
+          day: 2
         },
         {
           id: 3,
@@ -42,7 +42,7 @@ class UserWorkouts extends Component {
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 5
+          day: 2
         },
         {
           id: 5,
@@ -73,6 +73,9 @@ class UserWorkouts extends Component {
         }
       ]
     }
+  };
+  deleteWorkout = () => {
+    console.log('delete');
   };
   render() {
     const { users } = this.state;
@@ -107,15 +110,19 @@ class UserWorkouts extends Component {
     }
     console.log(arr);
     return (
-      <div>
+      <React.Fragment>
         <Day name={users.name} today={dDay} />{' '}
         {arr.map(workDay => (
           <DailyWorkout key={workDay.id} workoutDay={workDay} />
         ))}
         {users.workouts.map(workout => (
-          <Workout key={workout.id} workout={workout} />
+          <Workout
+            key={workout.id}
+            workout={workout}
+            deleteClickHandler={this.deleteWorkout}
+          />
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }

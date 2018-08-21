@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://2moz.github.io/workoutproject",
   "dependencies": {
+    "bootstrap": "^4.1.3",
     "gh-pages": "^1.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

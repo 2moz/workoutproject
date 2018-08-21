@@ -4,7 +4,7 @@ class Day extends Component {
   render() {
     const { name, today } = this.props;
     return (
-      <div>
+      <div className="container">
         {' '}
         <h1>{name}</h1>
         <h2>{today}</h2>
