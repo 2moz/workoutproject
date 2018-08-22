@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Day extends Component {
   render() {
     const { name, today } = this.props;
+
     return (
       <div className="container">
         {' '}

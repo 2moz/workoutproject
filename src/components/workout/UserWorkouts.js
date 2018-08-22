@@ -10,29 +10,29 @@ class UserWorkouts extends Component {
         {value => {
           const { users } = value;
           let dt = new Date();
-          let today = dt.getDay();
+          let today = dt.getDay().toString();
           const arr = users.workouts.filter(word => word.day === today);
           let dDay = '';
           switch (today) {
-            case 1:
+            case '1':
               dDay = 'Monday';
               break;
-            case 2:
+            case '2':
               dDay = 'Tuesday';
               break;
-            case 3:
+            case '3':
               dDay = 'Wednesday';
               break;
-            case 4:
+            case '4':
               dDay = 'Thurday';
               break;
-            case 5:
+            case '5':
               dDay = 'Friday';
               break;
-            case 6:
+            case '6':
               dDay = 'Sarturday';
               break;
-            case 0:
+            case '0':
               dDay = 'Sunday';
               break;
             default:

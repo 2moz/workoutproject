@@ -16,30 +16,28 @@ class Workout extends Component {
     const { showWorkoutInfo } = this.state;
 
     let today = '';
-    switch (day) {
-      case 1:
+    switch (day.toString()) {
+      case '1':
         today = 'Monday';
         break;
-      case 2:
+      case '2':
         today = 'Tuesday';
         break;
-      case 3:
+      case '3':
         today = 'Wednesday';
         break;
-      case 4:
+      case '4':
         today = 'Thurday';
         break;
-      case 5:
+      case '5':
         today = 'Friday';
         break;
-      case 6:
+      case '6':
         today = 'Sarturday';
         break;
-      case 0:
-        today = 'Sunday';
-        break;
+
       default:
-        today = 'Day off';
+        today = 'Sunday';
     }
 
     return (

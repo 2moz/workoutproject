@@ -11,12 +11,24 @@ const reducer = (state, action) => {
           user => user.id !== action.payload
         )
       };
+
       return {
         ...state,
 
         users: newUser
       };
+    case 'ADD_WORKOUT':
+      newUser = {
+        name: state.users.name,
+        email: state.users.email,
+        workouts: [action.payload, ...state.users.workouts]
+      };
+      console.log(action.payload);
+      return {
+        ...state,
 
+        users: newUser
+      };
     default:
       return state;
   }
@@ -35,16 +47,16 @@ export class Provider extends Component {
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 1
+          day: '1'
         },
         {
           id: 2,
-          name: 'legpress',
+          name: 'benchpress',
           reps: 8,
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 2
+          day: '2'
         },
         {
           id: 3,
@@ -53,7 +65,7 @@ export class Provider extends Component {
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 4
+          day: '4'
         },
         {
           id: 4,
@@ -62,16 +74,16 @@ export class Provider extends Component {
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 2
+          day: '0'
         },
         {
           id: 5,
-          name: 'legpress',
+          name: 'pull overs',
           reps: 8,
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 6
+          day: '6'
         },
         {
           id: 6,
@@ -80,16 +92,16 @@ export class Provider extends Component {
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 1
+          day: '1'
         },
         {
           id: 7,
-          name: 'legpress',
+          name: 'squats',
           reps: 8,
           sets: 4,
           restTime: 5,
           weight: 50,
-          day: 1
+          day: '1'
         }
       ]
     },
